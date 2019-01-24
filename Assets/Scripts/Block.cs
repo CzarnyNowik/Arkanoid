@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
-    // config params
+    // Config params
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockSparklesVFX;
+
     //[SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites;
 
-    // cached reference
+    // Cached reference
     Level level;
 
-    // state var
+    // State
     [SerializeField] int timesHit; // serial only for debug
 
 

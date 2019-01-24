@@ -4,23 +4,21 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour {
 
-    // configuration paramaters
+    // Configuration paramaters
     [SerializeField] float minX = 1f;
     [SerializeField] float maxX = 15f;
     [SerializeField] float screenWidthInUnits = 16f;
 
-    // cached references
+    // Cached references
     GameStatus theGameStatus;
     Ball theBall;
 
-	// Use this for initialization
 	void Start()
     {
         theGameStatus = FindObjectOfType<GameStatus>();
         theBall = FindObjectOfType<Ball>();
 	}
 	
-	// Update is called once per frame
 	void Update()
     {
         Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y);

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Level : MonoBehaviour {
 
-    // parameters
+    // Config parameters
     [SerializeField] int breakableBlocks; // serialized only for bugging purpose
 
-    // cached reference
+    // Cached reference
     SceneLoader sceneloader;
 
     private void Start()
@@ -18,7 +18,6 @@ public class Level : MonoBehaviour {
     public void CountBlocks()
     {
         breakableBlocks++;
-
     }
 
     public void BlockDestroyed()
@@ -27,7 +26,6 @@ public class Level : MonoBehaviour {
         if(breakableBlocks <= 0)
         {
             sceneloader.LoadNextScene();
-        }
-            
+        } 
     }
 }

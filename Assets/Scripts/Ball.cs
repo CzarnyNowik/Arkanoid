@@ -2,14 +2,14 @@
 
 public class Ball : MonoBehaviour {
 
-    // config parameters
+    // Config parameters
     [SerializeField] Paddle paddle1;
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
     [SerializeField] AudioClip[] ballSounds;
     [SerializeField] float randomFactor = 0f;
 
-    // state
+    // State
     Vector2 paddleToBallVector;
     public bool hasStarted = false;
 
@@ -17,7 +17,6 @@ public class Ball : MonoBehaviour {
     AudioSource myAudioSource;
     Rigidbody2D myRigidBody2D;
 
-	// Use this for initialization
 	void Start()
     {
         paddleToBallVector = transform.position - paddle1.transform.position;
@@ -25,15 +24,13 @@ public class Ball : MonoBehaviour {
         myRigidBody2D = GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
 	void Update()
     {
         if (hasStarted != true)
         {
             LockBallToPaddle();
             LaunchOnMouseClick();
-        }
-        
+        }   
     }
 
     public void LaunchOnMouseClick()

@@ -6,13 +6,13 @@ using TMPro;
 
 public class GameStatus : MonoBehaviour {
 
-    // conf params
+    // Conf parameters
     [Range(0.1f, 10f)] [SerializeField]float gameSpeed = 1f;
     [SerializeField] int pointsPerBlockDestroyed = 69;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] bool isAutoPlayEnabled;
 
-    // state var
+    // State
     [SerializeField] int currentScore = 0;
 
     private void Awake()
@@ -33,7 +33,6 @@ public class GameStatus : MonoBehaviour {
         scoreText.text = currentScore.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Time.timeScale = gameSpeed;    
